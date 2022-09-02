@@ -1,12 +1,12 @@
-var http = require('http')
+var express = require('express')
+var app = express()
 
 const port = 3000
 
-const app = http.createServer(function (req, res) {
-  res.writeHead(200, { 'Content-Type': 'text/html' })
-  res.end('Hello World from Shivashish')
+app.get('/', function (req, res) {
+  res.send('Hello World from Shivashish')
 })
 
-app.listen(port, () => {
-  console.log(`Server is running at ${port}`)
+app.listen(port, function () {
+  console.log('App listening at http://localhost:%s', port)
 })
